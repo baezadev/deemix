@@ -321,7 +321,7 @@ const activeTabEmpty = computed(() => {
 				<h1>{{ t("favorites.noTracks") }}</h1>
 			</div>
 			<table v-if="favoriteTracks.length > 0" class="table">
-				<tr v-for="track in favoriteTracks" :key="track.id" class="track_row">
+				<tr v-for="track in favoriteTracks.toReversed()" :key="track.id" class="track_row">
 					<td
 						:class="{ first: track.position === 1 }"
 						class="cursor-default p-3 text-center"
