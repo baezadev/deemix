@@ -572,6 +572,7 @@ export class GW {
 		const limit = options.limit || 25;
 		const ids_raw = await this.get_user_favorite_ids(null, { limit });
 		const ids = ids_raw.data.map((x) => x.SNG_ID);
+        ids.reverse();
 		if (!ids.length) return [];
 		const data = await this.get_tracks(ids);
 		const result: any[] = [];
